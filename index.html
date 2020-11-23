@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link rel='shortcut icon' href='' type='image/x-icon' sizes="16x16" />
+    <!-- ================== ESTILOS CSS ================== -->
+    <link href="" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* NAVBAR BÁSICO */
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+
+        /* NAVBAR CON ICONOS */
+        .icon-bar {
+            width: 100%;
+            background-color: #555;
+            overflow: auto;
+        }
+
+        .icon-bar a {
+            float: left;
+            text-align: center;
+            width: 20%;
+            padding: 12px 0;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 36px;
+        }
+
+        .icon-bar a:hover {
+            background-color: #000;
+        }
+
+        .active {
+            background-color: #d7a3e8;
+        }
+        /* ACORDIÓN */
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+
+
+        /* Dropdown */
+        .dropbtn {
+            background-color: #f399e0;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #c654ba;}
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <!-- ================== SCRIPTS JS ================== -->
+    <script src=""></script>
+
+
+    <title>NAVEGACIÓN</title>
+</head>
+<body>
+<div>
+    <h3>ETIQUETA NAV</h3>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Página 1</a></li>
+            <li><a href="#">Página 2</a></li>
+        </ul>
+    </nav>
+    <!-- ================== BARRA NAV ================== -->
+    <h3>NAV CON ESTILO</h3>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+    <!-- ================== BARRA NAV ICONO ================== -->
+    <h3>NAV SIN TEXTO</h3>
+    <div class="icon-bar">
+        <a class="active" href="#"><i class="fa fa-home"></i></a>
+        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="https://parquesoft.com/ti/" target="pagina_prueba"><i class="fa fa-envelope"></i></a>
+        <a href="tables.html" target="_blank"><i class="fa fa-globe"></i></a>
+        <a href="#"><i class="fa fa-trash"></i></a>
+    </div>
+    <!-- ================== DROPDOWN ================== -->
+    <h3>MENÚ DESPLEGABLE</h3>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    <!-- ================== ACORDIÓN ================== -->
+    <h3>ACORDIÓN</h3>
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+        <p>Lorem ipsum...</p>
+    </div>
+
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+        <p>Lorem ipsum...</p>
+    </div>
+
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+        <p>Lorem ipsum...</p>
+    </div>
+</div>
+
+
+
+<!-- ================== SCRIPTS JS ================== -->
+<script src=""></script>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+
+            /* Toggle between hiding and showing the active panel */
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+</body>  
+<head>
+<meta charset=utf-8 />
+<title>Deportes</title>
+</head>
+<body>
+  
+
+<h1 style="color: blue">DEPORTES</h1>  
+<h2>Clases de deportes</h2>
+<img class="imageLeft" width="100" src="https://deportiweb.com/wp-content/uploads/tipos-de-deporte-1-1024x512.jpg" alt="Ed">
+  
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo de formulario básico</title>
+  </head>
+  <body>
+    <form>
+      Nombre:
+      <br>
+      <input type="text">
+      <br>
+      Edad:
+      <br>
+      <input type="number">
+      <br><br>
+      <input type="submit" value="Enviar datos">
+    </form>  
+ 
+ <head>
+    <meta charset="utf-8">
+    <title>Ejemplo uso del elemento label y del atributo for</title>
+  </head>
+  <body>
+    <form action="procesar-datos.php" method="post">
+      <label for="nombre_usuario">Usuario: </label>
+      <input type="text" name="usuario" id="nombre_usuario">
+      <br><br>
+      <label for="clave_usuario">Contraseña: </label>
+      <input type="password" name="clave" id="clave_usuario">
+      <br><br>
+      <input type="submit" value="Enviar datos">
+    </form>
+  </body>   
+  
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo de tabla con cabeceras</title>
+    <style>
+      table, td, th {
+        border:1px solid black;
+      }
+      table {
+        border-collapse:collapse;
+        width:100%;
+      }
+      td, th {
+        padding:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Tipos de Deportes</th>
+        <th>Competencia</th>
+        <th>Continente</th>
+      </tr>
+      <tr>
+        <td>Futbol</td>
+        <td>Champions</td>
+        <td>Europa</td>
+      </tr>
+      <tr>
+        <td>Natacion</td>
+        <td>Olimpiadas</td>
+        <td>Grecia</td>
+      </tr>
+    <tr>
+        <td>Baloncesto</td>
+        <td>Olimpiadas</td>
+        <td>EE.UU</td>
+      </tr>   
+      <tr>
+        <td>Beisbol</td>
+        <td>Liga EE.UU</td>
+        <td>Nueva York</td>
+      </tr>
+    </table>
+    
+
+    
+  </body>
+</html>
+<p><strong>Clasificación<span>▼ Caracter Especial</span></strong></p><br><p>Párrafo normal</p><div style="background: red; width: 100px"></div>
+    <html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo método GET en el atributo method</title>
+  </head>
+       <img class="imageLeft" width="100" src="https://e00-marca.uecdn.es/blogs/espanasemueve/imagenes_posts/2018/06/13/194054.jpg"alt="Ed">  
+  <body>
+    <form action="http://www.google.com/search" method="get">
+      Google:
+      <input type="search" name="q">
+      <input type="submit" value="Buscar">
+    </form>
+  </body>
+   
+   
+   
+</body>
+</html>
